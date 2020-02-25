@@ -1,10 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const intro = () => console.log('Welcome to the Brain Games!\n');
+const userName = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ');
 
-
-const userName = readlineSync.question('May I have your name? ');
-const greeting = () => console.log(`Hello, ${userName}!`);
+const intro = () => console.log(`Hello, ${userName}!`);
 
 
 const even = () => {
@@ -20,8 +18,8 @@ const even = () => {
 
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
-    } else return;
-  } console.log(`Congratulations, ${userName}!`); // исправить подстановку юзернейм
+    } else return console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${userName}!`);
+  } return console.log(`Congratulations, ${userName}!`);
 };
 
-export { intro, greeting, even };
+export { intro, even };
