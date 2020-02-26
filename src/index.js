@@ -3,14 +3,14 @@ import readlineSync from 'readline-sync';
 let userName;
 
 
-const intro = () => {
+export const intro = () => {
   userName = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ');
   console.log(`Hello, ${userName}!`);
 };
 
-const even = () => {
+export const even = () => {
   const min = 1;
-  const max = 999;
+  const max = 99;
 
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
@@ -24,5 +24,3 @@ const even = () => {
     } else return console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${userName}!`);
   } return console.log(`Congratulations, ${userName}!`);
 };
-
-export { intro, even };
