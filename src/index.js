@@ -1,9 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const userName = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ');
+let userName;
 
-const intro = () => console.log(`Hello, ${userName}!`);
 
+const intro = () => {
+  userName = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ');
+  console.log(`Hello, ${userName}!`);
+};
 
 const even = () => {
   const min = 1;
