@@ -20,8 +20,17 @@ export const rules = () => {
     randomOperation = '*';
   }
 
-  // eslint-disable-next-line no-eval
-  const correctAnswer = eval(`${randomNumber1} ${randomOperation} ${randomNumber2}`);
+  const correctAnswerCalculation = () => {
+    let result = 0;
+    if (randomOperation === '+') {
+      result = randomNumber1 + randomNumber2;
+    } else if (randomOperation === '-') {
+      result = randomNumber1 - randomNumber2;
+    } else {
+      result = randomNumber1 * randomNumber2;
+    } return result;
+  };
+  const correctAnswer = correctAnswerCalculation();
   const userAnswer = Number(readlineSync.question(`Question: ${randomNumber1} ${randomOperation} ${randomNumber2}\nYour answer: `));
   return pairs.cons(correctAnswer, userAnswer);
 };
