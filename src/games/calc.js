@@ -6,7 +6,7 @@ export const task = 'What is the result of the expression?';
 
 export const rules = () => {
   const min = 1;
-  const max = 99;
+  const max = 9;
 
   const randomNumber1 = Math.floor(Math.random() * (max - min + 1)) + min;
   const randomNumber2 = Math.floor(Math.random() * (max - min + 1)) + min;
