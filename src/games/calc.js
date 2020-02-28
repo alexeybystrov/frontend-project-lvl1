@@ -29,6 +29,7 @@ export const rules = () => {
       result = randomNumber1 * randomNumber2;
     } return result;
   };
+
   const correctAnswer = correctAnswerCalculation();
   const userAnswer = Number(readlineSync.question(`Question: ${randomNumber1} ${randomOperation} ${randomNumber2}\nYour answer: `));
   return [correctAnswer, userAnswer];
