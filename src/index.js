@@ -1,4 +1,3 @@
-import pairs from '@hexlet/pairs';
 import readlineSync from 'readline-sync';
 
 let userName;
@@ -13,11 +12,11 @@ export const gameEngine = (task, rules) => {
 
   for (let i = 0; i < 3; i += 1) {
     const answers = rules();
-    const firstNumber = pairs.car(answers);
-    const secondNumber = pairs.cdr(answers);
+    const correctAnswer = answers[0];
+    const userAnswer = answers[1];
 
-    if (firstNumber === secondNumber) {
+    if (correctAnswer === userAnswer) {
       console.log('Correct!');
-    } else return console.log(`"${secondNumber}" is wrong answer ;(. Correct answer was "${firstNumber}".\nLet's try again, ${userName}!`);
+    } else return console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${userName}!`);
   } return console.log(`Congratulations, ${userName}!`);
 };

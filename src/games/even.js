@@ -1,4 +1,3 @@
-import pairs from '@hexlet/pairs';
 import readlineSync from 'readline-sync';
 
 
@@ -12,5 +11,5 @@ export const rules = () => {
 
   const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
   const userAnswer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
-  return pairs.cons(correctAnswer, userAnswer);
+  return [correctAnswer, userAnswer];
 };
