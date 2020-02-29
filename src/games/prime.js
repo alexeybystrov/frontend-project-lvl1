@@ -5,7 +5,7 @@ export const task = 'Answer "yes" if given number is prime. Otherwise answer "no
 
 export const rules = () => {
   const min = 2;
-  const max = 10; // после отладки поставить 100
+  const max = 30;
 
   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 
