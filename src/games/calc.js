@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { intro, gameEngine } from '../index.js';
 
 
@@ -32,8 +31,8 @@ const rules = () => {
   };
 
   const correctAnswer = correctAnswerCalculation();
-  const userAnswer = Number(readlineSync.question(`Question: ${randomNumber1} ${randomOperation} ${randomNumber2}\nYour answer: `));
-  return [correctAnswer, userAnswer];
+  const questionString = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
+  return [correctAnswer, questionString];
 };
 
 export default () => {

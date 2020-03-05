@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { intro, gameEngine } from '../index.js';
 
 
@@ -26,8 +25,8 @@ const rules = () => {
   };
 
   const correctAnswer = progression[indexToMask];
-  const userAnswer = Number(readlineSync.question(`Question: ${question()}\nYour answer: `));
-  return [correctAnswer, userAnswer];
+  const questionString = `${question()}`;
+  return [correctAnswer, questionString];
 };
 
 export default () => {

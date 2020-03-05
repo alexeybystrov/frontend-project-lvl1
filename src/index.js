@@ -11,9 +11,9 @@ export const gameEngine = (task, rules) => {
   console.log(task);
 
   for (let i = 0; i < 3; i += 1) {
-    const answers = rules();
-    const correctAnswer = answers[0];
-    const userAnswer = answers[1];
+    const gameDetails = rules();
+    const correctAnswer = String(gameDetails[0]);
+    const userAnswer = readlineSync.question(`Question: ${gameDetails[1]}\nYour answer: `);
 
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
