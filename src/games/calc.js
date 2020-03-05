@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
+import { intro, gameEngine } from '../index.js';
 
 
-export const task = 'What is the result of the expression?';
+const task = 'What is the result of the expression?';
 
-export const rules = () => {
+const rules = () => {
   const min = 1;
   const max = 9;
 
@@ -33,4 +34,9 @@ export const rules = () => {
   const correctAnswer = correctAnswerCalculation();
   const userAnswer = Number(readlineSync.question(`Question: ${randomNumber1} ${randomOperation} ${randomNumber2}\nYour answer: `));
   return [correctAnswer, userAnswer];
+};
+
+export default () => {
+  intro();
+  gameEngine(task, rules);
 };

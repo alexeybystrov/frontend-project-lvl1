@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
+import { intro, gameEngine } from '../index.js';
 
 
-export const task = 'What number is missing in the progression?';
+const task = 'What number is missing in the progression?';
 
-export const rules = () => {
+const rules = () => {
   const min = 1;
   const max = 99;
   const maxStep = 5;
@@ -27,4 +28,9 @@ export const rules = () => {
   const correctAnswer = progression[indexToMask];
   const userAnswer = Number(readlineSync.question(`Question: ${question()}\nYour answer: `));
   return [correctAnswer, userAnswer];
+};
+
+export default () => {
+  intro();
+  gameEngine(task, rules);
 };

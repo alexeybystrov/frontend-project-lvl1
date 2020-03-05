@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
+import { intro, gameEngine } from '../index.js';
 
 
-export const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export const rules = () => {
+const rules = () => {
   const min = 1;
   const max = 99;
 
@@ -12,4 +13,9 @@ export const rules = () => {
   const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
   const userAnswer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
   return [correctAnswer, userAnswer];
+};
+
+export default () => {
+  intro();
+  gameEngine(task, rules);
 };

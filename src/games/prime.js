@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
+import { intro, gameEngine } from '../index.js';
 
 
-export const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export const rules = () => {
+const rules = () => {
   const min = 2;
   const max = 20;
 
@@ -20,4 +21,9 @@ export const rules = () => {
   const correctAnswer = correctAnswerCalculation();
   const userAnswer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
   return [correctAnswer, userAnswer];
+};
+
+export default () => {
+  intro();
+  gameEngine(task, rules);
 };

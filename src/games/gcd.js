@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
+import { intro, gameEngine } from '../index.js';
 
 
-export const task = 'Find the greatest common divisor of given numbers.';
+const task = 'Find the greatest common divisor of given numbers.';
 
-export const rules = () => {
+const rules = () => {
   const min = 1;
   const max = 99;
 
@@ -22,4 +23,9 @@ export const rules = () => {
   const correctAnswer = correctAnswerCalculation();
   const userAnswer = Number(readlineSync.question(`Question: ${randomNumber1} ${randomNumber2}\nYour answer: `));
   return [correctAnswer, userAnswer];
+};
+
+export default () => {
+  intro();
+  gameEngine(task, rules);
 };
