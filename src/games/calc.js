@@ -12,23 +12,23 @@ const rules = () => {
   const randomNumber2 = randomizer(min, max);
   const randomNumber3 = randomizer(min, operationCount);
   let randomOperation;
-  if (randomNumber3 === 1) {
-    randomOperation = '+';
-  } else if (randomNumber3 === 2) {
-    randomOperation = '-';
-  } else {
-    randomOperation = '*';
-  }
 
   const correctAnswerCalculation = () => {
     let result = 0;
-    if (randomOperation === '+') {
-      result = randomNumber1 + randomNumber2;
-    } else if (randomOperation === '-') {
-      result = randomNumber1 - randomNumber2;
-    } else {
-      result = randomNumber1 * randomNumber2;
-    } return result;
+    switch (randomNumber3) {
+      case 1:
+        randomOperation = '+';
+        result = randomNumber1 + randomNumber2;
+        break;
+      case 2:
+        randomOperation = '-';
+        result = randomNumber1 - randomNumber2;
+        break;
+      default:
+        randomOperation = '*';
+        result = randomNumber1 * randomNumber2;
+    }
+    return result;
   };
 
   const correctAnswer = correctAnswerCalculation();
