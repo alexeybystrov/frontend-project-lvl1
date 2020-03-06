@@ -3,7 +3,7 @@ import { intro, randomizer, gameEngine } from '../index.js';
 
 const task = 'What is the result of the expression?';
 
-const rules = () => {
+const generateQuestionAndAnswer = () => {
   const min = 1;
   const max = 9;
   const operationCount = 3;
@@ -12,7 +12,7 @@ const rules = () => {
   const randomNumber2 = randomizer(min, max);
   let randomOperation;
 
-  const correctAnswerCalculation = () => {
+  const expressionResult = () => {
     const randomNumber = randomizer(min, operationCount);
     let result = 0;
     switch (randomNumber) {
@@ -31,12 +31,12 @@ const rules = () => {
     return result;
   };
 
-  const correctAnswer = correctAnswerCalculation();
+  const correctAnswer = expressionResult();
   const questionString = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
   return [correctAnswer, questionString];
 };
 
 export default () => {
   intro();
-  gameEngine(task, rules);
+  gameEngine(task, generateQuestionAndAnswer);
 };

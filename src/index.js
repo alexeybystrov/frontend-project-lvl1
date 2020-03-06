@@ -9,12 +9,12 @@ export const intro = () => {
 
 export const randomizer = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-export const gameEngine = (task, rules) => {
+export const gameEngine = (task, generateQuestionAndAnswer) => {
   console.log(task);
 
   const gameRounds = 3;
   for (let i = 0; i < gameRounds; i += 1) {
-    const gameDetails = rules();
+    const gameDetails = generateQuestionAndAnswer();
     const correctAnswer = String(gameDetails[0]);
     const userAnswer = readlineSync.question(`Question: ${gameDetails[1]}\nYour answer: `);
 

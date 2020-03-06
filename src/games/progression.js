@@ -3,21 +3,20 @@ import { intro, randomizer, gameEngine } from '../index.js';
 
 const task = 'What number is missing in the progression?';
 
-const rules = () => {
+const generateQuestionAndAnswer = () => {
   const min = 1;
   const max = 99;
   const maxStep = 5;
   const progressionLength = 10;
 
+  const progression = [];
   const startNumber = randomizer(min, max);
   const step = randomizer(min, maxStep);
-
-  const progression = [startNumber];
-  for (let i = 0; i < (progressionLength - 1); i += 1) {
-    progression.push(progression[i] + step);
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression.push(startNumber + step * i);
   }
 
-  const indexToMask = Math.floor(Math.random() * (progressionLength - 1));
+  const indexToMask = randomizer(min, progressionLength) - 1;
 
   const question = () => {
     const maskedProgression = progression;
@@ -32,5 +31,5 @@ const rules = () => {
 
 export default () => {
   intro();
-  gameEngine(task, rules);
+  gameEngine(task, generateQuestionAndAnswer);
 };
