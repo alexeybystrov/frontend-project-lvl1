@@ -1,4 +1,4 @@
-import { intro, gameEngine } from '../index.js';
+import { intro, randomizer, gameEngine } from '../index.js';
 
 
 const task = 'What number is missing in the progression?';
@@ -8,8 +8,8 @@ const rules = () => {
   const max = 99;
   const maxStep = 5;
 
-  const startNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-  const step = Math.floor(Math.random() * (maxStep - min + 1)) + min;
+  const startNumber = randomizer(min, max);
+  const step = randomizer(min, maxStep);
 
   const progression = [startNumber];
   for (let i = 0; i < 10; i += 1) {

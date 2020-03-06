@@ -1,4 +1,4 @@
-import { intro, gameEngine } from '../index.js';
+import { intro, randomizer, gameEngine } from '../index.js';
 
 
 const task = 'Find the greatest common divisor of given numbers.';
@@ -7,8 +7,8 @@ const rules = () => {
   const min = 1;
   const max = 30;
 
-  const randomNumber1 = Math.floor(Math.random() * (max - min + 1)) + min;
-  const randomNumber2 = Math.floor(Math.random() * (max - min + 1)) + min;
+  const randomNumber1 = randomizer(min, max);
+  const randomNumber2 = randomizer(min, max);
 
   const correctAnswerCalculation = () => {
     const minNumber = Math.min(randomNumber1, randomNumber2);

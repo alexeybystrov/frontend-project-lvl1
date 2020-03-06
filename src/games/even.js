@@ -1,4 +1,4 @@
-import { intro, gameEngine } from '../index.js';
+import { intro, randomizer, gameEngine } from '../index.js';
 
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -7,7 +7,7 @@ const rules = () => {
   const min = 1;
   const max = 99;
 
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  const randomNumber = randomizer(min, max);
 
   const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
   const questionString = `${randomNumber}`;

@@ -1,4 +1,4 @@
-import { intro, gameEngine } from '../index.js';
+import { intro, randomizer, gameEngine } from '../index.js';
 
 
 const task = 'What is the result of the expression?';
@@ -6,10 +6,11 @@ const task = 'What is the result of the expression?';
 const rules = () => {
   const min = 1;
   const max = 9;
+  const operationCount = 3;
 
-  const randomNumber1 = Math.floor(Math.random() * (max - min + 1)) + min;
-  const randomNumber2 = Math.floor(Math.random() * (max - min + 1)) + min;
-  const randomNumber3 = (Math.floor(Math.random() * (3 - 1 + 1)) + 1);
+  const randomNumber1 = randomizer(min, max);
+  const randomNumber2 = randomizer(min, max);
+  const randomNumber3 = randomizer(min, operationCount);
   let randomOperation;
   if (randomNumber3 === 1) {
     randomOperation = '+';

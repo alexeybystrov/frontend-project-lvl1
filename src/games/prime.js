@@ -1,4 +1,4 @@
-import { intro, gameEngine } from '../index.js';
+import { intro, randomizer, gameEngine } from '../index.js';
 
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -7,7 +7,7 @@ const rules = () => {
   const min = 2;
   const max = 20;
 
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  const randomNumber = randomizer(min, max);
 
   const correctAnswerCalculation = () => {
     for (let divisor = 2; divisor < randomNumber; divisor += 1) {
