@@ -10,16 +10,16 @@ const rules = () => {
   const randomNumber1 = randomizer(min, max);
   const randomNumber2 = randomizer(min, max);
 
-  const correctAnswerCalculation = () => {
-    const minNumber = Math.min(randomNumber1, randomNumber2);
-    const maxNumber = Math.max(randomNumber1, randomNumber2);
+  const correctAnswerCalculation = (firstNumber, secondNumber) => {
+    const minNumber = Math.min(firstNumber, secondNumber);
+    const maxNumber = Math.max(firstNumber, secondNumber);
     let result = minNumber;
     while (!(minNumber % result === 0 && maxNumber % result === 0)) {
       result -= 1;
     } return result;
   };
 
-  const correctAnswer = correctAnswerCalculation();
+  const correctAnswer = correctAnswerCalculation(randomNumber1, randomNumber2);
   const questionString = `${randomNumber1} ${randomNumber2}`;
   return [correctAnswer, questionString];
 };

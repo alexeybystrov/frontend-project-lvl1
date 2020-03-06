@@ -12,7 +12,8 @@ export const randomizer = (min, max) => Math.floor(Math.random() * (max - min + 
 export const gameEngine = (task, rules) => {
   console.log(task);
 
-  for (let i = 0; i < 3; i += 1) {
+  const gameRounds = 3;
+  for (let i = 0; i < gameRounds; i += 1) {
     const gameDetails = rules();
     const correctAnswer = String(gameDetails[0]);
     const userAnswer = readlineSync.question(`Question: ${gameDetails[1]}\nYour answer: `);
