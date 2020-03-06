@@ -7,16 +7,17 @@ const rules = () => {
   const min = 1;
   const max = 99;
   const maxStep = 5;
+  const progressionLength = 10;
 
   const startNumber = randomizer(min, max);
   const step = randomizer(min, maxStep);
 
   const progression = [startNumber];
-  for (let i = 0; i < 10; i += 1) {
+  for (let i = 0; i < (progressionLength - 1); i += 1) {
     progression.push(progression[i] + step);
   }
 
-  const indexToMask = Math.floor(Math.random() * 9);
+  const indexToMask = Math.floor(Math.random() * (progressionLength - 1));
 
   const question = () => {
     const maskedProgression = progression;

@@ -10,12 +10,12 @@ const rules = () => {
 
   const randomNumber1 = randomizer(min, max);
   const randomNumber2 = randomizer(min, max);
-  const randomNumber3 = randomizer(min, operationCount);
   let randomOperation;
 
   const correctAnswerCalculation = () => {
+    const randomNumber = randomizer(min, operationCount);
     let result = 0;
-    switch (randomNumber3) {
+    switch (randomNumber) {
       case 1:
         randomOperation = '+';
         result = randomNumber1 + randomNumber2;
