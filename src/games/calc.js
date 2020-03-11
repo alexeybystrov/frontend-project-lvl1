@@ -32,8 +32,8 @@ const generateQuestionAndAnswer = () => {
   };
 
   const correctAnswer = expressionResult();
-  const questionString = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
-  return [correctAnswer, questionString];
+  const question = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
+  return [correctAnswer, question];
 };
 
 export default () => {

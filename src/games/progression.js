@@ -25,8 +25,7 @@ const generateQuestionAndAnswer = () => {
   };
 
   const correctAnswer = progression[indexToMask];
-  const questionString = `${question()}`;
-  return [correctAnswer, questionString];
+  return [correctAnswer, question()];
 };
 
 export default () => {

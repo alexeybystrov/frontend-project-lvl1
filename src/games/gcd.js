@@ -20,8 +20,8 @@ const generateQuestionAndAnswer = () => {
   };
 
   const correctAnswer = greatestCommonDivisor(randomNumber1, randomNumber2);
-  const questionString = `${randomNumber1} ${randomNumber2}`;
-  return [correctAnswer, questionString];
+  const question = `${randomNumber1} ${randomNumber2}`;
+  return [correctAnswer, question];
 };
 
 export default () => {
