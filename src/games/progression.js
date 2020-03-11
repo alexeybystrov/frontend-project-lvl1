@@ -8,6 +8,8 @@ const generateQuestionAndAnswer = () => {
   const max = 99;
   const maxStep = 5;
   const progressionLength = 10;
+  const firstIndex = 0;
+  const lastIndex = progressionLength - 1;
 
   const progression = [];
   const startNumber = randomizer(min, max);
@@ -16,7 +18,7 @@ const generateQuestionAndAnswer = () => {
     progression.push(startNumber + step * i);
   }
 
-  const indexToMask = randomizer(min, progressionLength) - 1;
+  const indexToMask = randomizer(firstIndex, lastIndex);
 
   const question = () => {
     const maskedProgression = progression;
