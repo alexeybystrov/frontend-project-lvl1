@@ -21,7 +21,7 @@ const generateQuestionAndAnswer = () => {
 
   const correctAnswer = greatestCommonDivisor(randomNumber1, randomNumber2);
   const question = `${randomNumber1} ${randomNumber2}`;
-  return [correctAnswer, question];
+  return [correctAnswer.toString(), question];
 };
 
 export default () => {

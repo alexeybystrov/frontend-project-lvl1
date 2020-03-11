@@ -12,9 +12,8 @@ export const gameEngine = (task, generateQuestionAndAnswer) => {
 
   const gameRounds = 3;
   for (let i = 0; i < gameRounds; i += 1) {
-    const gameDetails = generateQuestionAndAnswer();
-    const correctAnswer = gameDetails[0].toString();
-    const userAnswer = readlineSync.question(`Question: ${gameDetails[1]}\nYour answer: `);
+    const [correctAnswer, question] = generateQuestionAndAnswer();
+    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
 
     if (correctAnswer === userAnswer) {
       console.log('Correct!');

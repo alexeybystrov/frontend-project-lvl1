@@ -26,7 +26,7 @@ const generateQuestionAndAnswer = () => {
     return maskedProgression.join(' ');
   };
 
-  const correctAnswer = progression[indexToMask];
+  const correctAnswer = progression[indexToMask].toString();
   return [correctAnswer, question()];
 };
 

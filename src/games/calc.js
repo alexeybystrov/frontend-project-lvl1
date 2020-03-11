@@ -36,7 +36,7 @@ const generateQuestionAndAnswer = () => {
 
   const correctAnswer = calculator(randomNumber1, randomNumber2, randomOperation);
   const question = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
-  return [correctAnswer, question];
+  return [correctAnswer.toString(), question];
 };
 
 export default () => {
