@@ -10,7 +10,7 @@ const generateQuestionAndAnswer = () => {
   const question = randomizer(min, max);
 
   const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
-  return [correctAnswer, question.toString()];
+  return [correctAnswer, question];
 };
 
 export default () => {

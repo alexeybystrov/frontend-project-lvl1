@@ -18,7 +18,7 @@ const generateQuestionAndAnswer = () => {
   };
 
   const correctAnswer = isPrime();
-  return [correctAnswer, question.toString()];
+  return [correctAnswer, question];
 };
 
 export default () => {
