@@ -1,5 +1,5 @@
-import { intro, randomizer, gameEngine } from '../index.js';
-
+import { intro, gameEngine } from '../index.js';
+import randomizer from '../utils.js';
 
 const task = 'What number is missing in the progression?';
 

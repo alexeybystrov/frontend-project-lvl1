@@ -1,5 +1,5 @@
-import { intro, randomizer, gameEngine } from '../index.js';
-
+import { intro, gameEngine } from '../index.js';
+import randomizer from '../utils.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
