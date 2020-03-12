@@ -1,13 +1,16 @@
 import readlineSync from 'readline-sync';
 
-let userName;
+// let userName;
 
-export const intro = () => {
+/* export const intro = () => {
   userName = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ');
   console.log(`Hello, ${userName}!`);
-};
+}; */
 
-export const gameEngine = (task, generateQuestionAndAnswer) => {
+const gameEngine = (task, generateQuestionAndAnswer) => {
+  const userName = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ');
+  console.log(`Hello, ${userName}!`);
+
   console.log(task);
 
   const gameRounds = 3;
@@ -23,3 +26,5 @@ export const gameEngine = (task, generateQuestionAndAnswer) => {
     }
   } console.log(`Congratulations, ${userName}!`);
 };
+
+export default gameEngine;
