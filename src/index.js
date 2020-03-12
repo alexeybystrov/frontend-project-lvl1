@@ -17,6 +17,9 @@ export const gameEngine = (task, generateQuestionAndAnswer) => {
 
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
-    } else return console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${userName}!`);
-  } return console.log(`Congratulations, ${userName}!`);
+    } else {
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${userName}!`);
+      return;
+    }
+  } console.log(`Congratulations, ${userName}!`);
 };
