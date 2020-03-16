@@ -1,5 +1,5 @@
 import gameEngine from '../index.js';
-import randomizer from '../utils.js';
+import generateRandomNumber from '../utils.js';
 
 const task = 'What number is missing in the progression?';
 
@@ -12,13 +12,13 @@ const generateQuestionAndAnswer = () => {
   const lastIndex = progressionLength - 1;
 
   const progression = [];
-  const startNumber = randomizer(min, max);
-  const step = randomizer(min, maxStep);
+  const startNumber = generateRandomNumber(min, max);
+  const step = generateRandomNumber(min, maxStep);
   for (let i = 0; i < progressionLength; i += 1) {
     progression.push(startNumber + step * i);
   }
 
-  const indexToMask = randomizer(firstIndex, lastIndex);
+  const indexToMask = generateRandomNumber(firstIndex, lastIndex);
 
   const question = () => {
     const maskedProgression = progression;

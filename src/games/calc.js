@@ -1,5 +1,5 @@
 import gameEngine from '../index.js';
-import randomizer from '../utils.js';
+import generateRandomNumber from '../utils.js';
 
 
 const task = 'What is the result of the expression?';
@@ -30,9 +30,9 @@ const generateQuestionAndAnswer = () => {
   const max = 9;
   const operations = ['+', '-', '*'];
 
-  const randomNumber1 = randomizer(min, max);
-  const randomNumber2 = randomizer(min, max);
-  const randomOperation = operations[randomizer(min, operations.length) - 1];
+  const randomNumber1 = generateRandomNumber(min, max);
+  const randomNumber2 = generateRandomNumber(min, max);
+  const randomOperation = operations[generateRandomNumber(min, operations.length) - 1];
 
   const correctAnswer = calculator(randomNumber1, randomNumber2, randomOperation);
   const question = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
