@@ -22,6 +22,8 @@ Run in console:
 * ```brain-progression```
 * ```brain-prime```
 
+---
+
 ### brain-even
 
 The goal is to answer "yes" if given number is even, otherwise answer "no".
