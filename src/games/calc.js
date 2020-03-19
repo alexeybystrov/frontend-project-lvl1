@@ -1,11 +1,10 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-
 const task = 'What is the result of the expression?';
 
-const calculator = (firstNum, secondNum, operation) => {
-  let result = 0;
+const calculate = (firstNum, secondNum, operation) => {
+  let result;
   switch (operation) {
     case '+':
       result = firstNum + secondNum;
@@ -32,9 +31,9 @@ const generateQuestionAndAnswer = () => {
 
   const randomNumber1 = generateRandomNumber(min, max);
   const randomNumber2 = generateRandomNumber(min, max);
-  const randomOperation = operations[generateRandomNumber(min, operations.length) - 1];
+  const randomOperation = operations[generateRandomNumber(min - 1, operations.length - 1)];
 
-  const correctAnswer = calculator(randomNumber1, randomNumber2, randomOperation);
+  const correctAnswer = calculate(randomNumber1, randomNumber2, randomOperation);
   const question = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
   return [correctAnswer.toString(), question];
 };

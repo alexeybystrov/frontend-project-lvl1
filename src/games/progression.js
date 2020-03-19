@@ -20,14 +20,14 @@ const generateQuestionAndAnswer = () => {
 
   const indexToMask = generateRandomNumber(firstIndex, lastIndex);
 
-  const question = () => {
+  const generateQuestion = () => {
     const maskedProgression = progression;
     maskedProgression[indexToMask] = '..';
     return maskedProgression.join(' ');
   };
 
   const correctAnswer = progression[indexToMask].toString();
-  return [correctAnswer, question()];
+  return [correctAnswer, generateQuestion()];
 };
 
 export default () => gameEngine(task, generateQuestionAndAnswer);
