@@ -11,6 +11,7 @@
 2. Download [Brain games](https://github.com/alexeybystrov/frontend-project-lvl1/archive/master.zip) and unzip the archive to the destination folder
 3. Open console and go to the folder with unarchived game ```cd <path_to_game>```
 4. Run in console ```make install```
+5. Run in console ```make link```
 
 ## Start game
 
